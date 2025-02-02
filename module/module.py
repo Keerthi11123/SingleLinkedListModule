@@ -36,6 +36,17 @@ class LinkedList:
         if temp:  # If key is found
             prev.next = temp.next  # Bypass the node
 
+    def reverse(self):
+        """Reverses the linked list in-place."""
+        prev = None
+        current = self.head
+        while current:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+        self.head = prev
+
     def display(self):
         """Prints the linked list."""
         temp = self.head
